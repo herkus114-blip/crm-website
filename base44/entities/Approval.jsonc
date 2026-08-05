@@ -1,0 +1,92 @@
+{
+  "name": "Approval",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "\u017dem\u0117s \u012fsigijimas",
+        "Biud\u017eetas",
+        "Rangovo parinkimas",
+        "Etapo u\u017ebaigimas",
+        "Projekto pakeitimas",
+        "Nuolaida klientui",
+        "Garantijos i\u0161mok\u0117jimas",
+        "I\u0161laidos",
+        "Kita"
+      ]
+    },
+    "amount": {
+      "type": "number"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "requester": {
+      "type": "string"
+    },
+    "requester_role": {
+      "type": "string"
+    },
+    "submitted_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "risk_if_delayed": {
+      "type": "string"
+    },
+    "supporting_documents": {
+      "type": "string"
+    },
+    "approval_type": {
+      "type": "string",
+      "enum": [
+        "Paprasta",
+        "Nuosekli",
+        "Dviguba"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Laukiama Direktoriaus",
+        "Laukiama Savininko",
+        "Patvirtinta",
+        "Atmesta",
+        "Gr\u0105\u017einta taisyti",
+        "Papra\u0161yta info"
+      ]
+    },
+    "approver": {
+      "type": "string"
+    },
+    "approval_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "decision_comment": {
+      "type": "string"
+    },
+    "threshold_exceeded": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "title",
+    "development_id",
+    "record_type"
+  ]
+}

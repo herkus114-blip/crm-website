@@ -1,0 +1,51 @@
+{
+  "name": "Contractor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "company_code": {
+      "type": "string"
+    },
+    "vat_code": {
+      "type": "string"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "insurance_expiry": {
+      "type": "string",
+      "format": "date"
+    },
+    "guarantee_amount": {
+      "type": "number"
+    },
+    "performance_rating": {
+      "type": "number"
+    },
+    "active_contracts": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Aktyvus",
+        "Neaktyvus",
+        "Juodra\u0161is s\u0105ra\u0161as"
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

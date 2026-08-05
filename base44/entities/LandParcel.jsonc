@@ -1,0 +1,95 @@
+{
+  "name": "LandParcel",
+  "type": "object",
+  "properties": {
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "cadastral_number": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "seller": {
+      "type": "string"
+    },
+    "land_use_purpose": {
+      "type": "string"
+    },
+    "total_area_ha": {
+      "type": "number"
+    },
+    "total_area_ares": {
+      "type": "number"
+    },
+    "acquisition_price": {
+      "type": "number"
+    },
+    "acquisition_costs": {
+      "type": "number"
+    },
+    "mortgage_status": {
+      "type": "string"
+    },
+    "easements": {
+      "type": "string"
+    },
+    "access_status": {
+      "type": "string"
+    },
+    "utility_availability": {
+      "type": "string"
+    },
+    "zoning_status": {
+      "type": "string"
+    },
+    "protected_area": {
+      "type": "boolean"
+    },
+    "coastal_zone": {
+      "type": "boolean"
+    },
+    "cultural_heritage": {
+      "type": "boolean"
+    },
+    "flood_risk": {
+      "type": "boolean"
+    },
+    "geotechnical_status": {
+      "type": "string"
+    },
+    "contamination_status": {
+      "type": "string"
+    },
+    "due_diligence_result": {
+      "type": "string",
+      "enum": [
+        "Neatlikta",
+        "Vyksta",
+        "Teigiama",
+        "Neigiama"
+      ]
+    },
+    "registr\u0173_centras_reference": {
+      "type": "string"
+    },
+    "purchase_contract_ref": {
+      "type": "string"
+    },
+    "title_registration_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "development_id",
+    "cadastral_number"
+  ]
+}

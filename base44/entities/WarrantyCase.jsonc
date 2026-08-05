@@ -1,0 +1,114 @@
+{
+  "name": "WarrantyCase",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "house_id": {
+      "type": "string"
+    },
+    "house_number": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Statybin\u0117 garantija",
+        "Rangovo garantija",
+        "Konstrukcija",
+        "Stogas",
+        "Fasadas",
+        "Langai ir durys",
+        "Hidroizoliacija",
+        "\u0160ildymas",
+        "V\u0117dinimas",
+        "Vandentieka",
+        "Elektra",
+        "\u012eranga",
+        "Aplinkotvarka",
+        "Keliai ir infrastrukt\u016bra"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "\u017dema",
+        "Vidutin\u0117",
+        "Auk\u0161ta",
+        "Skubi"
+      ]
+    },
+    "emergency": {
+      "type": "boolean"
+    },
+    "date_reported": {
+      "type": "string",
+      "format": "date"
+    },
+    "response_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "responsible_person": {
+      "type": "string"
+    },
+    "responsible_contractor": {
+      "type": "string"
+    },
+    "liability_decision": {
+      "type": "string"
+    },
+    "repair_plan": {
+      "type": "string"
+    },
+    "repair_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "evidence": {
+      "type": "string"
+    },
+    "customer_acceptance": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pateikta",
+        "Inspektuojama",
+        "Remontuojama",
+        "Laukiama pakartotinio inspektavimo",
+        "Atmesta po pakartotinio",
+        "Priimta",
+        "U\u017edaryta"
+      ]
+    },
+    "cost": {
+      "type": "number"
+    },
+    "recovery_from_contractor": {
+      "type": "number"
+    },
+    "satisfaction_score": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "case_id",
+    "house_id",
+    "category"
+  ]
+}

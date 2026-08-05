@@ -1,0 +1,65 @@
+{
+  "name": "Reservation",
+  "type": "object",
+  "properties": {
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "plot_id": {
+      "type": "string"
+    },
+    "house_id": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "reservation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry": {
+      "type": "string",
+      "format": "date"
+    },
+    "deposit": {
+      "type": "number"
+    },
+    "deposit_status": {
+      "type": "string",
+      "enum": [
+        "Laukiama",
+        "Gauta",
+        "Gr\u0105\u017einta"
+      ]
+    },
+    "agreed_price": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "conditions": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Aktyvi",
+        "Parduota",
+        "At\u0161aukta",
+        "Pasibaigusi"
+      ]
+    }
+  },
+  "required": [
+    "development_id",
+    "customer_name"
+  ]
+}

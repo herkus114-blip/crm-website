@@ -1,0 +1,140 @@
+{
+  "name": "Development",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "internal_code": {
+      "type": "string"
+    },
+    "municipality": {
+      "type": "string"
+    },
+    "eldership": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "original_area_ha": {
+      "type": "number"
+    },
+    "planned_plots": {
+      "type": "integer"
+    },
+    "planned_houses": {
+      "type": "integer"
+    },
+    "development_type": {
+      "type": "string",
+      "enum": [
+        "Gyvenamoji",
+        "Mi\u0161ri",
+        "Kita"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "acquisition_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "planned_completion_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "responsible_director": {
+      "type": "string"
+    },
+    "responsible_manager": {
+      "type": "string"
+    },
+    "lifecycle_phase": {
+      "type": "string",
+      "enum": [
+        "Galimyb\u0117",
+        "Tyrimas",
+        "\u012esigijimas",
+        "Planavimas",
+        "Skirstymas",
+        "Projektavimas",
+        "Leidimai",
+        "Statyba",
+        "Pardavimas",
+        "U\u017ebaigta"
+      ]
+    },
+    "reported_progress": {
+      "type": "number"
+    },
+    "calculated_progress": {
+      "type": "number"
+    },
+    "legal_status": {
+      "type": "string"
+    },
+    "planning_status": {
+      "type": "string",
+      "enum": [
+        "Neprad\u0117ta",
+        "Vyksta",
+        "Patvirtinta"
+      ]
+    },
+    "infrastructure_status": {
+      "type": "string",
+      "enum": [
+        "Neprad\u0117ta",
+        "Projektuojama",
+        "Statoma",
+        "U\u017ebaigta"
+      ]
+    },
+    "construction_status": {
+      "type": "string",
+      "enum": [
+        "Neprad\u0117ta",
+        "Vyksta",
+        "U\u017ebaigta"
+      ]
+    },
+    "sales_status": {
+      "type": "string",
+      "enum": [
+        "Neprad\u0117ta",
+        "Aktyvi",
+        "U\u017ebaigta"
+      ]
+    },
+    "financial_status": {
+      "type": "string"
+    },
+    "risk_score": {
+      "type": "number"
+    },
+    "top_blocker": {
+      "type": "string"
+    },
+    "next_milestone": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "health": {
+      "type": "string",
+      "enum": [
+        "green",
+        "amber",
+        "red",
+        "grey",
+        "blue"
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

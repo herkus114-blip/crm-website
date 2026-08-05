@@ -1,0 +1,176 @@
+{
+  "name": "Permit",
+  "type": "object",
+  "properties": {
+    "permit_id": {
+      "type": "string"
+    },
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "plot_id": {
+      "type": "string"
+    },
+    "house_id": {
+      "type": "string"
+    },
+    "infrastructure_package": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u017dem\u0117 ir nuosavyb\u0117",
+        "Teritorinis planavimas",
+        "Tyrimai ir studijos",
+        "Namo projektavimas ir statyba",
+        "Elektra",
+        "Vanduo ir nuotekos",
+        "Dujos",
+        "Keliai ir priva\u017eiavimai",
+        "Lietaus vanduo ir drena\u017eas",
+        "Aplinka ir specialios teritorijos",
+        "Prie\u0161gaisrin\u0117 sauga",
+        "Bendra infrastrukt\u016bra"
+      ]
+    },
+    "approval_type": {
+      "type": "string"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "municipality": {
+      "type": "string"
+    },
+    "utility_provider": {
+      "type": "string"
+    },
+    "legal_basis": {
+      "type": "string"
+    },
+    "requirement_status": {
+      "type": "string",
+      "enum": [
+        "Nevertinta",
+        "Nereikalinga",
+        "Reikalinga",
+        "Vyksta",
+        "Patvirtinta",
+        "Atmesta"
+      ]
+    },
+    "responsible_person": {
+      "type": "string"
+    },
+    "consultant": {
+      "type": "string"
+    },
+    "application_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "external_application_number": {
+      "type": "string"
+    },
+    "external_system": {
+      "type": "string"
+    },
+    "external_link": {
+      "type": "string"
+    },
+    "statutory_response_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Nevertinta",
+        "Nereikalinga",
+        "Reikalinga",
+        "Ruo\u0161iama",
+        "Vidinis vertinimas",
+        "Paruo\u0161ta pateikti",
+        "Pateikta",
+        "Nagrin\u0117jama",
+        "Gauti pastabym\u0173",
+        "Reikalingas pataisymas",
+        "Pateikta i\u0161 naujo",
+        "Patvirtinta",
+        "Atmesta",
+        "Skundas",
+        "Sustabdyta",
+        "Negaliojanti",
+        "U\u017edaryta"
+      ]
+    },
+    "comments_received": {
+      "type": "string"
+    },
+    "internal_response_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "revision_number": {
+      "type": "integer"
+    },
+    "approval_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "renewal_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "conditions": {
+      "type": "string"
+    },
+    "blocking": {
+      "type": "boolean"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "\u017dema",
+        "Vidutin\u0117",
+        "Auk\u0161ta"
+      ]
+    },
+    "validator": {
+      "type": "string"
+    },
+    "validation_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "template_version": {
+      "type": "string"
+    },
+    "next_review_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "Nevaliduota",
+        "Reikalauja validacijos",
+        "Validuota"
+      ]
+    }
+  },
+  "required": [
+    "permit_id",
+    "development_id",
+    "category",
+    "approval_type"
+  ]
+}

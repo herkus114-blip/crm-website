@@ -1,0 +1,112 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "plot_id": {
+      "type": "string"
+    },
+    "house_id": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "assignee": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "\u017dema",
+        "Vidutin\u0117",
+        "Auk\u0161ta",
+        "Kritin\u0117"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Juodra\u0161tis",
+        "Priskirta",
+        "Priimta",
+        "Vykdoma",
+        "Laukiama vidaus",
+        "Laukiama institucijos",
+        "Laukiama rangovo",
+        "Laukiama kliento",
+        "U\u017eblokuota",
+        "Pateikta tvirtinti",
+        "Gr\u0105\u017einta",
+        "Patvirtinta",
+        "Atmesta",
+        "U\u017ebaigta",
+        "At\u0161aukta"
+      ]
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "original_due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "delay_reason": {
+      "type": "string"
+    },
+    "recovery_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "estimated_hours": {
+      "type": "number"
+    },
+    "actual_hours": {
+      "type": "number"
+    },
+    "dependencies": {
+      "type": "string"
+    },
+    "is_critical": {
+      "type": "boolean"
+    },
+    "escalated": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

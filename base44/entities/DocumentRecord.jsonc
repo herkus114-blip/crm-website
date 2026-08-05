@@ -1,0 +1,112 @@
+{
+  "name": "DocumentRecord",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "plot_id": {
+      "type": "string"
+    },
+    "house_id": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "\u017dem\u0117s dokumentai",
+        "Notarin\u0117s sutartys",
+        "Registr\u0173 centras",
+        "Tyrimai",
+        "Studijos",
+        "Planavimo dokumentai",
+        "Projektai",
+        "Leidimai",
+        "Korespondencija",
+        "Komunalin\u0117",
+        "Sutartys",
+        "Pasi\u016blymai",
+        "S\u0105skaitos",
+        "Mok\u0117jimai",
+        "Draudimas",
+        "Garantijos",
+        "Statybos \u017eurnalas",
+        "Inspektavimai",
+        "Pa\u017eym\u0117jimai",
+        "Nuotraukos",
+        "U\u017ebaigimo dokumentai",
+        "Pardavim\u0173 dokumentai",
+        "Klient\u0173 dokumentai",
+        "Perdavimo dokumentai",
+        "Garantijos"
+      ]
+    },
+    "document_number": {
+      "type": "string"
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "issuing_authority": {
+      "type": "string"
+    },
+    "external_reference": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Juodra\u0161tis",
+        "Vidinis vertinimas",
+        "Patvirtinta",
+        "Pateikta",
+        "Pastabos",
+        "Pataisyta",
+        "Pakeista",
+        "Galutinis",
+        "Archyvuota"
+      ]
+    },
+    "uploader": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "confidentiality": {
+      "type": "string",
+      "enum": [
+        "Vie\u0161a",
+        "Vidin\u0117",
+        "Konfidenciali"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "document_type"
+  ]
+}

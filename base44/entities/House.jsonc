@@ -1,0 +1,141 @@
+{
+  "name": "House",
+  "type": "object",
+  "properties": {
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "plot_id": {
+      "type": "string"
+    },
+    "plot_number": {
+      "type": "string"
+    },
+    "internal_house_number": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "house_model": {
+      "type": "string"
+    },
+    "architectural_version": {
+      "type": "string"
+    },
+    "floors": {
+      "type": "integer"
+    },
+    "gross_area": {
+      "type": "number"
+    },
+    "useful_area": {
+      "type": "number"
+    },
+    "energy_target": {
+      "type": "string"
+    },
+    "bedrooms": {
+      "type": "integer"
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "foundation_type": {
+      "type": "string"
+    },
+    "structure_type": {
+      "type": "string"
+    },
+    "facade_type": {
+      "type": "string"
+    },
+    "roof_type": {
+      "type": "string"
+    },
+    "heating_system": {
+      "type": "string"
+    },
+    "ventilation_system": {
+      "type": "string"
+    },
+    "construction_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "planned_completion": {
+      "type": "string",
+      "format": "date"
+    },
+    "actual_completion": {
+      "type": "string",
+      "format": "date"
+    },
+    "reported_progress": {
+      "type": "number"
+    },
+    "calculated_progress": {
+      "type": "number"
+    },
+    "permit_status": {
+      "type": "string"
+    },
+    "registration_status": {
+      "type": "string"
+    },
+    "sales_status": {
+      "type": "string",
+      "enum": [
+        "Laisva",
+        "Rezervuota",
+        "Parduota"
+      ]
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "sale_price": {
+      "type": "number"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "forecast_margin": {
+      "type": "number"
+    },
+    "warranty_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "warranty_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "responsible_supervisor": {
+      "type": "string"
+    },
+    "current_phase": {
+      "type": "string"
+    },
+    "current_blocker": {
+      "type": "string"
+    },
+    "health": {
+      "type": "string",
+      "enum": [
+        "green",
+        "amber",
+        "red",
+        "grey",
+        "blue"
+      ]
+    }
+  },
+  "required": [
+    "development_id",
+    "internal_house_number"
+  ]
+}

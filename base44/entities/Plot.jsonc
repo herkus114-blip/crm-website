@@ -1,0 +1,73 @@
+{
+  "name": "Plot",
+  "type": "object",
+  "properties": {
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "internal_plot_number": {
+      "type": "string"
+    },
+    "cadastral_number": {
+      "type": "string"
+    },
+    "area_ares": {
+      "type": "number"
+    },
+    "plot_status": {
+      "type": "string",
+      "enum": [
+        "Laisva",
+        "Rezervuota",
+        "Parduota",
+        "Projektuojama",
+        "Leidimas laukia",
+        "Statoma",
+        "U\u017ebaigta",
+        "U\u017eblokuota",
+        "Bendra teritorija"
+      ]
+    },
+    "building_zone": {
+      "type": "string"
+    },
+    "max_height": {
+      "type": "number"
+    },
+    "max_floors": {
+      "type": "integer"
+    },
+    "utility_connection_status": {
+      "type": "string"
+    },
+    "road_access_status": {
+      "type": "string"
+    },
+    "assigned_house_id": {
+      "type": "string"
+    },
+    "assigned_house_model": {
+      "type": "string"
+    },
+    "sale_price": {
+      "type": "number"
+    },
+    "buyer_name": {
+      "type": "string"
+    },
+    "reservation_expiry": {
+      "type": "string",
+      "format": "date"
+    },
+    "title_registration_status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "development_id",
+    "internal_plot_number"
+  ]
+}

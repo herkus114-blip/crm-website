@@ -1,0 +1,81 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "preferred_language": {
+      "type": "string",
+      "enum": [
+        "lt",
+        "en"
+      ]
+    },
+    "source": {
+      "type": "string"
+    },
+    "interested_development_id": {
+      "type": "string"
+    },
+    "interested_development_name": {
+      "type": "string"
+    },
+    "interested_plot_id": {
+      "type": "string"
+    },
+    "interested_house_id": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "number"
+    },
+    "financing_status": {
+      "type": "string"
+    },
+    "desired_completion": {
+      "type": "string",
+      "format": "date"
+    },
+    "assigned_manager": {
+      "type": "string"
+    },
+    "gdpr_consent": {
+      "type": "boolean"
+    },
+    "lead_score": {
+      "type": "number"
+    },
+    "pipeline_stage": {
+      "type": "string",
+      "enum": [
+        "Naujas lead",
+        "Kontaktuota",
+        "Kvalifikuota",
+        "Apsilankymas suplanuotas",
+        "Apsilankymas \u012fvyko",
+        "Pasi\u016blymas i\u0161si\u0173stas",
+        "Derybos",
+        "Rezervacija laukiama",
+        "Rezervuota",
+        "Preliminari sutartis",
+        "Finansavimas laukiama",
+        "Notaras suplanuotas",
+        "Parduota",
+        "Prarasta"
+      ]
+    },
+    "communication_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Risk",
+  "type": "object",
+  "properties": {
+    "development_id": {
+      "type": "string"
+    },
+    "development_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Teisin\u0117",
+        "\u017dem\u0117s nuosavyb\u0117",
+        "Planavimas",
+        "Leidimas",
+        "Aplinka",
+        "Komunalin\u0117",
+        "Keli\u0173 prieiga",
+        "Projektavimas",
+        "Pirkimas",
+        "Rangovas",
+        "Statybos kokyb\u0117",
+        "Sauga",
+        "Grafikas",
+        "Biud\u017eetas",
+        "Pardavimai",
+        "Klientas",
+        "Finansavimas",
+        "Garantija"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "probability": {
+      "type": "integer"
+    },
+    "impact": {
+      "type": "integer"
+    },
+    "risk_score": {
+      "type": "number"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "\u017dema",
+        "Vidutin\u0117",
+        "Auk\u0161ta",
+        "Kritin\u0117"
+      ]
+    },
+    "mitigation": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Atvira",
+        "Valdoma",
+        "U\u017edaryta"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ]
+}
