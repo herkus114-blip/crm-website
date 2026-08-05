@@ -1,8 +1,10 @@
 import React from 'react';
+import { FileDown } from 'lucide-react';
 import { useApp } from '@/lib/AppContext';
 import { useEntityList } from '@/lib/useEntityList';
 import PageHeader, { Loader } from '@/components/ui-parts';
 import { formatNumber, formatCurrency, formatDate } from '@/lib/armarisUtils';
+import { exportLandPdf } from '@/lib/pdfExport';
 
 export default function LandList() {
   const { t, lang } = useApp();
@@ -14,16 +16,22 @@ export default function LandList() {
       {loading ? <Loader /> : (
         <div className="space-y-3">
           {data.map(p => (
-            <div key={p.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div key={p.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="font-semibold text-slate-900">{p.cadastral_number}</p>
-                  <p className="text-xs text-slate-500">{p.address} · {p.development_name}</p>
+                  <p className="font-semibold text-slate-900 dark:text-slate-100">{p.cadastral_number}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{p.address} · {p.development_name}</p>
                 </div>
                 <div className="text-right">
-                  {p.acquisition_price > 0 && <p className="font-semibold text-slate-900">{formatCurrency(p.acquisition_price)}</p>}
-                  <p className="text-xs text-slate-500">{formatNumber(p.total_area_ha, 'ha')}</p>
+                  {p.acquisition_price > 0 && <p className="font-semibold text-slate-900 dark:text-slate-100">{formatCurrency(p.acquisition_price)}</p>}
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{formatNumber(p.total_area_ha, 'ha')}</p>
                 </div>
+                <button
+                  onClick={() => exportLandPdf(p, lang)}
+                  className="inline-flex items-center gap-1 rounded-lg border border-slate-200 px-2.5 py-1 text-xs font-medium text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                >
+                  <FileDown className="h-3 w-3" /> PDF
+                </button>
               </div>
               <div className="mt-3 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3 lg:grid-cols-6">
                 {[

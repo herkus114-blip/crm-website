@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, FileDown } from 'lucide-react';
 import { useApp } from '@/lib/AppContext';
 import { useEntityList } from '@/lib/useEntityList';
 import PageHeader, { Loader } from '@/components/ui-parts';
 import { formatNumber, formatCurrency } from '@/lib/armarisUtils';
+import { exportPlotPdf } from '@/lib/pdfExport';
 import { cn } from '@/lib/utils';
 
 const STATUS_BADGE = {
@@ -47,17 +48,23 @@ export default function PlotsList() {
       {loading ? <Loader /> : (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {filtered.map(p => (
-            <div key={p.id} className="rounded-xl border border-slate-200 bg-white p-3">
+            <div key={p.id} className="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
               <div className="flex items-center justify-between">
-                <p className="font-bold text-slate-900">{p.internal_plot_number}</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">{p.internal_plot_number}</p>
                 <span className={cn('rounded-md px-1.5 py-0.5 text-[10px] font-medium', STATUS_BADGE[p.plot_status] || 'bg-slate-100 text-slate-600')}>{p.plot_status}</span>
               </div>
-              <div className="mt-2 space-y-0.5 text-xs text-slate-500">
+              <div className="mt-2 space-y-0.5 text-xs text-slate-500 dark:text-slate-400">
                 <p>{formatNumber(p.area_ares, 'arai')}</p>
                 {p.assigned_house_model && <p className="truncate">{p.assigned_house_model}</p>}
-                {p.sale_price > 0 && <p className="font-medium text-slate-700">{formatCurrency(p.sale_price)}</p>}
+                {p.sale_price > 0 && <p className="font-medium text-slate-700 dark:text-slate-300">{formatCurrency(p.sale_price)}</p>}
                 {p.buyer_name && <p className="truncate">{p.buyer_name}</p>}
               </div>
+              <button
+                onClick={() => exportPlotPdf(p, lang)}
+                className="mt-2 inline-flex w-full items-center justify-center gap-1 rounded-md border border-slate-200 px-2 py-1 text-[10px] font-medium text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              >
+                <FileDown className="h-3 w-3" /> PDF
+              </button>
             </div>
           ))}
         </div>

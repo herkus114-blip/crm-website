@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Home as HomeIcon, Calendar, Euro, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Home as HomeIcon, Calendar, Euro, ShieldCheck, FileDown } from 'lucide-react';
 import { useApp } from '@/lib/AppContext';
 import { useEntityList } from '@/lib/useEntityList';
 import HealthBadge from '@/components/HealthBadge';
 import ProgressBar from '@/components/ProgressBar';
 import { formatDate, formatCurrency, formatNumber, isOverdue } from '@/lib/armarisUtils';
+import { exportHousePdf } from '@/lib/pdfExport';
 import { cn } from '@/lib/utils';
 
 export default function HouseDetail() {
@@ -60,6 +61,12 @@ export default function HouseDetail() {
               <Calendar className="h-3 w-3" /> {formatDate(h.planned_completion)}
             </div>
             {h.current_blocker && <p className="mt-1 text-xs text-amber-700">⚠ {h.current_blocker}</p>}
+            <button
+              onClick={() => exportHousePdf(h, lang)}
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+            >
+              <FileDown className="h-3.5 w-3.5" /> {lang === 'en' ? 'Export PDF' : lang === 'ru' ? 'Экспорт PDF' : 'Eksportuoti PDF'}
+            </button>
           </div>
         </div>
       </div>

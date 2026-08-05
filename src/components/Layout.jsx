@@ -4,11 +4,12 @@ import {
   LayoutDashboard, Building2, Map, Mountain, Grid3x3, Home as HomeIcon,
   FileText, Hammer, ListChecks, BadgeCheck, FolderOpen, HardHat,
   Euro, TrendingUp, Users, ShieldCheck, FileBarChart, Settings,
-  ScrollText, Menu, X, Globe, ChevronDown, LogOut
+  ScrollText, Menu, X, Globe, ChevronDown, LogOut, Landmark
 } from 'lucide-react';
 import { useApp } from '@/lib/AppContext';
 import { base44 } from '@/api/base44Client';
 import { cn } from '@/lib/utils';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const NAV = [
   { to: '/', icon: LayoutDashboard, key: 'dashboard', roles: ['owner', 'director', 'manager', 'supervisor'] },
@@ -29,6 +30,7 @@ const NAV = [
   { to: '/warranty', icon: ShieldCheck, key: 'warranty', roles: ['owner', 'director', 'manager'] },
   { to: '/reports', icon: FileBarChart, key: 'reports', roles: ['owner', 'director'] },
   { to: '/audit', icon: ScrollText, key: 'audit', roles: ['owner', 'director'] },
+  { to: '/government-links', icon: Landmark, key: 'governmentLinks', roles: ['owner', 'director', 'manager', 'supervisor'] },
   { to: '/administration', icon: Settings, key: 'administration', roles: ['owner'] }
 ];
 
@@ -45,20 +47,20 @@ export default function Layout() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 w-64 transform border-r border-slate-200 bg-white transition-transform duration-200 lg:static lg:translate-x-0',
+          'fixed inset-y-0 left-0 z-50 w-64 transform border-r border-slate-200 bg-white transition-transform duration-200 dark:border-slate-800 dark:bg-slate-900 lg:static lg:translate-x-0',
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
-        <div className="flex h-16 items-center gap-2 border-b border-slate-200 px-5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white">
+        <div className="flex h-16 items-center gap-2 border-b border-slate-200 px-5 dark:border-slate-800">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900">
             <Building2 className="h-5 w-5" />
           </div>
           <div className="leading-tight">
-            <p className="text-sm font-bold tracking-tight text-slate-900">{t('appName')}</p>
+            <p className="text-sm font-bold tracking-tight text-slate-900 dark:text-slate-100">{t('appName')}</p>
             <p className="text-[10px] uppercase tracking-wider text-slate-400">{t('appTagline')}</p>
           </div>
           <button className="ml-auto lg:hidden" onClick={() => setMobileOpen(false)}>
@@ -75,7 +77,7 @@ export default function Layout() {
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) => cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                isActive ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                isActive ? 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100'
               )}
             >
               <Icon className="h-4.5 w-4.5 shrink-0" style={{ width: '1.125rem', height: '1.125rem' }} />
@@ -89,9 +91,9 @@ export default function Layout() {
 
       {/* Main */}
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur lg:px-6">
+        <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-slate-200 bg-white/90 px-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90 lg:px-6">
           <button className="lg:hidden" onClick={() => setMobileOpen(true)}>
-            <Menu className="h-6 w-6 text-slate-700" />
+            <Menu className="h-6 w-6 text-slate-700 dark:text-slate-300" />
           </button>
 
           <div className="ml-auto flex items-center gap-3">
@@ -99,39 +101,42 @@ export default function Layout() {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(o => !o)}
-                className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 py-1.5 text-sm text-slate-600 hover:bg-slate-50"
+                className="flex items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 py-1.5 text-sm text-slate-600 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
               >
                 <Globe className="h-4 w-4" />
                 <span className="uppercase">{lang}</span>
                 <ChevronDown className="h-3.5 w-3.5" />
               </button>
               {langOpen && (
-                <div className="absolute right-0 mt-1 w-32 rounded-lg border border-slate-200 bg-white py-1 shadow-lg">
-                  {['lt', 'en'].map(l => (
+                <div className="absolute right-0 mt-1 w-36 rounded-lg border border-slate-200 bg-white py-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                  {['lt', 'en', 'ru'].map(l => (
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangOpen(false); }}
-                      className={cn('flex w-full items-center px-3 py-1.5 text-sm hover:bg-slate-50', lang === l ? 'font-semibold text-slate-900' : 'text-slate-600')}
+                      className={cn('flex w-full items-center px-3 py-1.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800', lang === l ? 'font-semibold text-slate-900 dark:text-slate-100' : 'text-slate-600 dark:text-slate-300')}
                     >
-                      {l === 'lt' ? 'Lietuvių' : 'English'}
+                      {l === 'lt' ? 'Lietuvių' : l === 'en' ? 'English' : 'Русский'}
                     </button>
                   ))}
                 </div>
               )}
             </div>
 
+            {/* Theme toggle */}
+            <ThemeToggle />
+
             {/* User */}
-            <div className="flex items-center gap-2 rounded-lg border border-slate-200 px-2.5 py-1.5">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white uppercase">
+            <div className="flex items-center gap-2 rounded-lg border border-slate-200 px-2.5 py-1.5 dark:border-slate-700">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white uppercase dark:bg-slate-100 dark:text-slate-900">
                 {(user?.full_name || user?.email || 'U').charAt(0)}
               </div>
               <div className="hidden leading-tight sm:block">
-                <p className="text-xs font-semibold text-slate-900 truncate max-w-[140px]">{user?.full_name || (lang === 'lt' ? 'Savininkas' : 'Owner')}</p>
+                <p className="text-xs font-semibold text-slate-900 truncate max-w-[140px] dark:text-slate-100">{user?.full_name || (lang === 'lt' ? 'Savininkas' : lang === 'ru' ? 'Владелец' : 'Owner')}</p>
                 <p className="text-[10px] text-slate-500">{t(role)}</p>
               </div>
             </div>
 
-            <button onClick={handleLogout} className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700" title={t('cancel')}>
+            <button onClick={handleLogout} className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200" title={t('cancel')}>
               <LogOut className="h-4.5 w-4.5" style={{ width: '1.125rem', height: '1.125rem' }} />
             </button>
           </div>

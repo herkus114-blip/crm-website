@@ -36,6 +36,7 @@ import Warranty from '@/pages/Warranty';
 import Reports from '@/pages/Reports';
 import Audit from '@/pages/Audit';
 import Administration from '@/pages/Administration';
+import GovernmentLinks from '@/pages/GovernmentLinks';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -87,6 +88,7 @@ const AuthenticatedApp = () => {
             <Route path="/reports" element={<Reports />} />
             <Route path="/audit" element={<Audit />} />
             <Route path="/administration" element={<Administration />} />
+            <Route path="/government-links" element={<GovernmentLinks />} />
           </Route>
         </Route>
         <Route path="*" element={<PageNotFound />} />

@@ -11,7 +11,7 @@ export function AppProvider({ children }) {
 
   useEffect(() => {
     const stored = localStorage.getItem('armaris_lang');
-    if (stored === 'en' || stored === 'lt') setLang(stored);
+    if (stored === 'en' || stored === 'lt' || stored === 'ru') setLang(stored);
   }, []);
 
   useEffect(() => {
